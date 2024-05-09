@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema({
     role:{
         type: String,
         default: 'voter'
+    },
+    isVerfied:{
+        type: String,
+        default: "pending"
     }
 },{timestamps: true});
 
