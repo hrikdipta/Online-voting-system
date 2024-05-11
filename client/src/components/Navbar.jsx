@@ -5,7 +5,7 @@ function Navbar_component() {
   const path = useLocation().pathname;
 
   return (
-    <Navbar fluid rounded>
+    <Navbar fluid rounded className=' border-b-2'>
       <Navbar.Brand href="#"as={'div'}>
         <Link to={'/'} className='flex'>
         <img src="https://www.shutterstock.com/shutterstock/photos/2184667969/display_1500/stock-vector-ballot-box-logo-simple-icon-vector-flat-design-ai-2184667969.jpg" className="mr-3 h-6 sm:h-9" alt="Logo" />
