@@ -5,7 +5,6 @@ import { Navbar,Button,Avatar} from "flowbite-react";
 function Navbar_component() {
   const path = useLocation().pathname;
   const {user} = useSelector(state => state.user)
-  console.log(user)
   return (
     <Navbar fluid rounded className=' border-b-2'>
       <Navbar.Brand href="#"as={'div'}>
