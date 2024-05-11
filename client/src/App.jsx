@@ -1,5 +1,13 @@
 import Navbar_component from './components/Navbar'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './pages/Home'
+import About from './pages/About';
+import Instructions from './pages/Instructions';
+import News from './pages/News';
+import Contact from './pages/Contact';
+import VoterLogin from './pages/VoterLogin';
+import AdminLogin from './pages/AdminLogin';
+
 function App() {
   return(
     <BrowserRouter>
