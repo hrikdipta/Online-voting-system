@@ -1,9 +1,11 @@
 import React from 'react'
-import { useLocation,Link } from 'react-router-dom';
-import { Navbar,Button } from "flowbite-react";
+import { useLocation,Link, } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Navbar,Button,Avatar} from "flowbite-react";
 function Navbar_component() {
   const path = useLocation().pathname;
-
+  const {user} = useSelector(state => state.user)
+  console.log(user)
   return (
     <Navbar fluid rounded className=' border-b-2'>
       <Navbar.Brand href="#"as={'div'}>
@@ -13,10 +15,13 @@ function Navbar_component() {
         </Link>
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <div className='hidden md:inline-flex'>
-          <Link to='/voter/login'><Button outline gradientDuoTone="pinkToOrange" className='mr-2'>Voter Login</Button></Link>
-          <Link to='/admin/login'><Button outline gradientDuoTone="redToYellow">Admin Login</Button></Link>
-        </div>
+        {
+          user ?<Avatar placeholderInitials={user.username.toUpperCase()[0]} rounded />:
+            <div className='hidden md:inline-flex'>
+              <Link to='/voter/login'><Button outline gradientDuoTone="pinkToOrange" className='mr-2'>Voter Login</Button></Link>
+              <Link to='/admin/login'><Button outline gradientDuoTone="redToYellow">Admin Login</Button></Link>
+            </div>
+        }
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
