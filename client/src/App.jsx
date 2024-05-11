@@ -7,7 +7,7 @@ import News from './pages/News';
 import Contact from './pages/Contact';
 import VoterLogin from './pages/VoterLogin';
 import AdminLogin from './pages/AdminLogin';
-
+import VoterRegistration from './pages/VoterRegistration';
 function App() {
   return(
     <BrowserRouter>
@@ -20,6 +20,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/voter/login' element={<VoterLogin />} />
         <Route path='/admin/login' element={<AdminLogin />} />
+        <Route path='/voter/register' element={<VoterRegistration />} />
       </Routes>
     </BrowserRouter>
   )

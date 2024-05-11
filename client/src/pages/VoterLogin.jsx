@@ -10,7 +10,7 @@ function VoterLogin() {
         <div className="mb-2 block">
           <Label htmlFor="email1" value="Your email" />
         </div>
-        <TextInput id="email1" type="email" placeholder="name@flowbite.com" required />
+        <TextInput id="email1" type="email" placeholder="name@example.com" required />
       </div>
       <div>
         <div className="mb-2 block">
@@ -18,7 +18,7 @@ function VoterLogin() {
         </div>
         <TextInput id="password1" type="password" required />
       </div>
-      <Button type="submit">Submit</Button>
+      <Button type="submit">Login</Button>
       </form>
       <div className='my-2'>
         Not registered yet? <Link to="/voter/register" className='text-blue-500 hover:underline '>Register here</Link>
