@@ -1,12 +1,15 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
 import authRouter from './routes/auth.route.js'
 const app = express();
 const port = 3000;
 
 
 app.use(express.json());
+app.use(cookieParser());
+
 // connect to mongodb
 dotenv.config();
 mongoose.connect(process.env.MONGODBURL).then(() => {
@@ -20,11 +23,11 @@ app.use('/api/auth',authRouter);
 
 //middlewires
 app.use((err,req,res,next)=>{
-  const statusCode=err.statusCode || 500;
+  const statuscode=err.statuscode || 500;
   const message=err.message || "Internal server Error"
-  return res.status(statusCode).json({
+  return res.status(statuscode).json({
     success:false,
-    statusCode,
+    statuscode,
     message
   })
 })

@@ -32,7 +32,7 @@ function VoterRegistration() {
                 return;
             }
             dispatch(userLoginSuccess(data));
-            navigate('/dashboard')
+            navigate('/login');
         } catch (error) {
             dispatch(userLoginFail('Something went wrong'))
             setError('Something went wrong')
@@ -63,7 +63,7 @@ function VoterRegistration() {
               <Button type="submit">Register</Button>
           </form>
           <div className='my-2'>
-            Already registered? <Link href="/voter/login" className='text-blue-500 hover:underline '>Login here</Link>
+            Already registered? <Link to="/voter/login" className='text-blue-500 hover:underline '>Login here</Link>
           </div>
         {error &&<Alert color="failure" onDismiss={() => setError(null)}>
             {error}
